@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/ovulationcalculator",
+  "version": "1.1.12",
+  "description": "Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/ovulationcalculator-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "ovulation calculator", "fertility calendar", "fertile window", "conception calculator", "cycle tracking"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/ovulationcalculator-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/ovulationcalculator?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
