@@ -1,0 +1,129 @@
+openapi: 3.0.4
+info:
+  title: Ovulation Calculator
+  description: Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/ovulationcalculator:
+    get:
+      summary: Calculate Ovulation
+      description: Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.
+      operationId: ovulationcalculator
+      parameters:
+      - name: last_period
+        in: query
+        schema:
+          type: string
+        required: true
+        description: First day of last menstrual period (YYYY-MM-DD)
+        example: 2024-01-01
+      - name: cycle_length
+        default: '28'
+        in: query
+        schema:
+          type: number
+        required: false
+        description: Average menstrual cycle length in days (21-35)
+        example: '28'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  last_period: 2024-01-01
+                  cycle_length: 28
+                  ovulation:
+                    date: 2024-01-15
+                    days_from_last_period: 14
+                  fertile_window:
+                    start: 2024-01-10
+                    end: 2024-01-15
+                    duration_days: 6
+                  most_fertile_days:
+                    start: 2024-01-13
+                    end: 2024-01-15
+                    duration_days: 3
+                  fertile_days:
+                  - date: 2024-01-10
+                    day_relative_to_ovulation: -5
+                    fertility_level: medium
+                    description: Fertile
+                  - date: 2024-01-11
+                    day_relative_to_ovulation: -4
+                    fertility_level: medium
+                    description: Fertile
+                  - date: 2024-01-12
+                    day_relative_to_ovulation: -3
+                    fertility_level: medium
+                    description: Fertile
+                  - date: 2024-01-13
+                    day_relative_to_ovulation: -2
+                    fertility_level: high
+                    description: Most fertile
+                  - date: 2024-01-14
+                    day_relative_to_ovulation: -1
+                    fertility_level: high
+                    description: Most fertile
+                  - date: 2024-01-15
+                    day_relative_to_ovulation: 0
+                    fertility_level: high
+                    description: Most fertile
+                  next_period:
+                    date: 2024-01-29
+                    days_from_last_period: 28
+                  cycle_phases:
+                    follicular_phase:
+                      duration_days: 14
+                      description: From first day of period to ovulation
+                    ovulation:
+                      duration_days: 1
+                      description: Egg is released from ovary
+                    luteal_phase:
+                      duration_days: 14
+                      description: From ovulation to next period
+                  current_status:
+                    current_phase: Menstruation
+                    is_fertile: false
+                    days_until_ovulation: -670
+                    days_until_next_period: -656
+                  disclaimer: This calculator provides estimates only. Actual ovulation may vary. Consult a healthcare provider for medical advice.
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
