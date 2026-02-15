@@ -12,14 +12,12 @@ namespace APIVerve.API.OvulationCalculator
     {
         /// <summary>
         /// First day of last menstrual period (YYYY-MM-DD)
-        /// Example: 2024-01-01
         /// </summary>
         [JsonProperty("last_period")]
         public string Last_period { get; set; }
 
         /// <summary>
-        /// Average menstrual cycle length in days (21-35)
-        /// Example: 28
+        /// Average menstrual cycle length in days
         /// </summary>
         [JsonProperty("cycle_length")]
         public string Cycle_length { get; set; }
