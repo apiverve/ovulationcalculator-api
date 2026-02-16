@@ -44,7 +44,10 @@ from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = OvulationcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 ```
 
 ###### Simple Request
@@ -198,7 +204,10 @@ from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient,
 
 api = OvulationcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 
 try:
     result = api.execute(query)
@@ -219,7 +228,10 @@ from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient,
 
 api = OvulationcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 
 try:
     result = api.execute(query)
@@ -253,7 +265,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient, OvulationcalculatorAPIClientError
 
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 
 # Using context manager ensures proper cleanup
 with OvulationcalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -279,7 +294,10 @@ from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient
 # Enable debug mode
 api = OvulationcalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "last_period": "2024-01-01", "cycle_length": 28 }
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -294,8 +312,12 @@ from apiverve_ovulationcalculator.apiClient import OvulationcalculatorAPIClient
 
 api = OvulationcalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "last_period": "2024-01-01",
+    "cycle_length": 28
+}
+
 try:
-    query = { "last_period": "2024-01-01", "cycle_length": 28 }
     result = api.execute(query)
     print(result)
 finally:
