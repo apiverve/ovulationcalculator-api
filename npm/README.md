@@ -200,8 +200,8 @@ async function makeRequest() {
     "current_status": {
       "current_phase": "Menstruation",
       "is_fertile": false,
-      "days_until_ovulation": -670,
-      "days_until_next_period": -656
+      "days_until_ovulation": -701,
+      "days_until_next_period": -687
     },
     "disclaimer": "This calculator provides estimates only. Actual ovulation may vary. Consult a healthcare provider for medical advice."
   }
