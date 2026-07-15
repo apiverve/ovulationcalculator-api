@@ -4,17 +4,29 @@ declare module '@apiverve/ovulationcalculator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface ovulationcalculatorResponse {
     status: string;
     error: string | null;
     data: OvulationCalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface OvulationCalculatorData {
-      lastPeriod:      Date;
-      cycleLength:     number;
+      lastPeriod:      Date | null;
+      cycleLength:     number | null;
       ovulation:       NextPeriod;
       fertileWindow:   FertileWindow;
       mostFertileDays: FertileWindow;
@@ -22,14 +34,14 @@ declare module '@apiverve/ovulationcalculator' {
       nextPeriod:      NextPeriod;
       cyclePhases:     CyclePhases;
       currentStatus:   CurrentStatus;
-      disclaimer:      string;
+      disclaimer:      null | string;
   }
   
   interface CurrentStatus {
-      currentPhase:        string;
-      isFertile:           boolean;
-      daysUntilOvulation:  number;
-      daysUntilNextPeriod: number;
+      currentPhase:        null | string;
+      isFertile:           boolean | null;
+      daysUntilOvulation:  number | null;
+      daysUntilNextPeriod: number | null;
   }
   
   interface CyclePhases {
@@ -39,26 +51,26 @@ declare module '@apiverve/ovulationcalculator' {
   }
   
   interface FollicularPhase {
-      durationDays: number;
-      description:  string;
+      durationDays: number | null;
+      description:  null | string;
   }
   
   interface FertileDay {
-      date:                   Date;
-      dayRelativeToOvulation: number;
-      fertilityLevel:         string;
-      description:            string;
+      date:                   Date | null;
+      dayRelativeToOvulation: number | null;
+      fertilityLevel:         null | string;
+      description:            null | string;
   }
   
   interface FertileWindow {
-      start:        Date;
-      end:          Date;
-      durationDays: number;
+      start:        Date | null;
+      end:          Date | null;
+      durationDays: number | null;
   }
   
   interface NextPeriod {
-      date:               Date;
-      daysFromLastPeriod: number;
+      date:               Date | null;
+      daysFromLastPeriod: number | null;
   }
 
   export default class ovulationcalculatorWrapper {
