@@ -12,8 +12,13 @@ public class BasicExample {
         OvulationCalculatorAPIClient client = new OvulationCalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;last_period&quot;, &quot;2024-01-01&quot;);
+        parameters.put(&quot;cycle_length&quot;, 28);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
