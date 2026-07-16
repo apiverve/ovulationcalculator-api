@@ -25,15 +25,18 @@ namespace APIVerve.API.OvulationCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("last_period")]
-        public DateTimeOffset LastPeriod { get; set; }
+        public DateTimeOffset? LastPeriod { get; set; }
 
         [JsonProperty("cycle_length")]
-        public long CycleLength { get; set; }
+        public long? CycleLength { get; set; }
 
         [JsonProperty("ovulation")]
         public NextPeriod Ovulation { get; set; }
@@ -66,13 +69,13 @@ namespace APIVerve.API.OvulationCalculator
         public string CurrentPhase { get; set; }
 
         [JsonProperty("is_fertile")]
-        public bool IsFertile { get; set; }
+        public bool? IsFertile { get; set; }
 
         [JsonProperty("days_until_ovulation")]
-        public long DaysUntilOvulation { get; set; }
+        public long? DaysUntilOvulation { get; set; }
 
         [JsonProperty("days_until_next_period")]
-        public long DaysUntilNextPeriod { get; set; }
+        public long? DaysUntilNextPeriod { get; set; }
     }
 
     public partial class CyclePhases
@@ -90,7 +93,7 @@ namespace APIVerve.API.OvulationCalculator
     public partial class FollicularPhase
     {
         [JsonProperty("duration_days")]
-        public long DurationDays { get; set; }
+        public long? DurationDays { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -99,10 +102,10 @@ namespace APIVerve.API.OvulationCalculator
     public partial class FertileDay
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("day_relative_to_ovulation")]
-        public long DayRelativeToOvulation { get; set; }
+        public long? DayRelativeToOvulation { get; set; }
 
         [JsonProperty("fertility_level")]
         public string FertilityLevel { get; set; }
@@ -114,21 +117,33 @@ namespace APIVerve.API.OvulationCalculator
     public partial class FertileWindow
     {
         [JsonProperty("start")]
-        public DateTimeOffset Start { get; set; }
+        public DateTimeOffset? Start { get; set; }
 
         [JsonProperty("end")]
-        public DateTimeOffset End { get; set; }
+        public DateTimeOffset? End { get; set; }
 
         [JsonProperty("duration_days")]
-        public long DurationDays { get; set; }
+        public long? DurationDays { get; set; }
     }
 
     public partial class NextPeriod
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("days_from_last_period")]
-        public long DaysFromLastPeriod { get; set; }
+        public long? DaysFromLastPeriod { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
