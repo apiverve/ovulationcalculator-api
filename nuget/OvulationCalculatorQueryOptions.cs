@@ -20,6 +20,6 @@ namespace APIVerve.API.OvulationCalculator
         /// Average menstrual cycle length in days
         /// </summary>
         [JsonProperty("cycle_length")]
-        public string Cycle_length { get; set; }
+        public int? Cycle_length { get; set; }
     }
 }
