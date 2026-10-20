@@ -3,11 +3,10 @@ Ovulation Calculator API
 
 Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-ovulationcalculator.svg)](https://pypi.org/project/apiverve-ovulationcalculator/)
+
+This is a Python wrapper for the [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-ovulationcalculator
 
 ## Configuration
 
-Before using the ovulationcalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Ovulation Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Ovulation Calculator API documentation is found here: [https://docs.apiverve.com/ref/ovulationcalculator](https://docs.apiverve.com/ref/ovulationcalculator?utm_source=pypi&utm_medium=readme).
+The Ovulation Calculator API documentation is found here: [https://docs.apiverve.com/ref/ovulationcalculator](https://docs.apiverve.com/ref/ovulationcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -183,8 +182,8 @@ print(result)
     "current_status": {
       "current_phase": "Menstruation",
       "is_fertile": false,
-      "days_until_ovulation": -670,
-      "days_until_next_period": -656
+      "days_until_ovulation": -701,
+      "days_until_next_period": -687
     },
     "disclaimer": "This calculator provides estimates only. Actual ovulation may vary. Consult a healthcare provider for medical advice."
   }
@@ -329,7 +328,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -340,12 +339,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
