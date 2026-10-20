@@ -1,13 +1,13 @@
-# [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.
 
 The Ovulation Calculator API provides a simple, reliable way to integrate ovulation calculator functionality into your applications. Built for developers who need production-ready ovulation calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/ovulationcalculator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/ovulationcalculator](https://docs.apiverve.com/ref/ovulationcalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,106 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Ovulation Calculator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "last_period": "2024-01-01",
+    "cycle_length": 28,
+    "ovulation": {
+      "date": "2024-01-15",
+      "days_from_last_period": 14
+    },
+    "fertile_window": {
+      "start": "2024-01-10",
+      "end": "2024-01-15",
+      "duration_days": 6
+    },
+    "most_fertile_days": {
+      "start": "2024-01-13",
+      "end": "2024-01-15",
+      "duration_days": 3
+    },
+    "fertile_days": [
+      {
+        "date": "2024-01-10",
+        "day_relative_to_ovulation": -5,
+        "fertility_level": "medium",
+        "description": "Fertile"
+      },
+      {
+        "date": "2024-01-11",
+        "day_relative_to_ovulation": -4,
+        "fertility_level": "medium",
+        "description": "Fertile"
+      },
+      {
+        "date": "2024-01-12",
+        "day_relative_to_ovulation": -3,
+        "fertility_level": "medium",
+        "description": "Fertile"
+      },
+      {
+        "date": "2024-01-13",
+        "day_relative_to_ovulation": -2,
+        "fertility_level": "high",
+        "description": "Most fertile"
+      },
+      {
+        "date": "2024-01-14",
+        "day_relative_to_ovulation": -1,
+        "fertility_level": "high",
+        "description": "Most fertile"
+      },
+      {
+        "date": "2024-01-15",
+        "day_relative_to_ovulation": 0,
+        "fertility_level": "high",
+        "description": "Most fertile"
+      }
+    ],
+    "next_period": {
+      "date": "2024-01-29",
+      "days_from_last_period": 28
+    },
+    "cycle_phases": {
+      "follicular_phase": {
+        "duration_days": 14,
+        "description": "From first day of period to ovulation"
+      },
+      "ovulation": {
+        "duration_days": 1,
+        "description": "Egg is released from ovary"
+      },
+      "luteal_phase": {
+        "duration_days": 14,
+        "description": "From ovulation to next period"
+      }
+    },
+    "current_status": {
+      "current_phase": "Menstruation",
+      "is_fertile": false,
+      "days_until_ovulation": -701,
+      "days_until_next_period": -687
+    },
+    "disclaimer": "This calculator provides estimates only. Actual ovulation may vary. Consult a healthcare provider for medical advice."
+  }
 }
 ```
 
@@ -204,7 +299,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Ovulation Calculator API](https://apiverve.com/marketplace/ovulationcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
