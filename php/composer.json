@@ -1,7 +1,7 @@
 {
     "name": "apiverve/ovulationcalculator",
     "description": "Ovulation Calculator estimates ovulation dates, fertile windows, and provides detailed cycle phase information based on menstrual cycle data.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
